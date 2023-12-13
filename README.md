@@ -1,2 +1,3 @@
-# jdp-llm
-Large language model service for knowledge base
+# JDP LLM
+
+Large language model service for local knowledge database.
