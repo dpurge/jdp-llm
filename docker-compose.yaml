@@ -1,5 +1,16 @@
 version: "3"
-services: {}
-volumes:
-  conversation_data:
-  knowledge_data:
+services:
+  knowledge-database:
+    build: ./knowledge-database
+    ports:
+    - "5432:5432"
+    volumes:
+    - ./knowledge-database/sql/init.sql:/docker-entrypoint-initdb.d/init.sqlvolumes
+    - ./data/knowledge:/var/lib/postgresql
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: knowledge
+volumes: {}
+  # conversation_data:
+  # knowledge_data:
